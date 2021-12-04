@@ -16,7 +16,7 @@
     ~~~~
 ## Script das tabelas
 
-    ## Tabela projeto
+- Tabela projetos
     ~~~~sql
         CREATE TABLE IF NOT EXISTS projetos
         (
@@ -26,9 +26,8 @@
             projetos_data_fim DATE,
             projetos_data_criacao TIMESTAMP DEFAULT CURRENT_TIMESTAMP
         );
-    ~~~~
     
-    ## Tabela atividades
+- Tabela atividades
     ~~~~sql
         CREATE TABLE IF NOT EXISTS atividades
         (
