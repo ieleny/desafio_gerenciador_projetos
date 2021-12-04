@@ -14,7 +14,7 @@
     ~~~~sql
         CREATE DATABASE desafio_gerenciador_projetos;
     ~~~~
-- Execute esse script
+## Script das tabelas
 
     # Tabela projeto
     ~~~~sql
