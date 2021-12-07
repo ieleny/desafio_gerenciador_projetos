@@ -6,11 +6,13 @@
     ~~~~sql
         mysql -u root -p
     ~~~~
+    
+## Script
+
 -  Criar database 
     ~~~~sql
         CREATE DATABASE desafio_gerenciador_projetos;
     ~~~~
-## Script das tabelas
 
 - Tabela projetos
     ~~~~sql
