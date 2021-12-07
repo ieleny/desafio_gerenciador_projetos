@@ -11,6 +11,9 @@ O projeto está dividido em duas pastas principais, a api e o front-end.
 ### Linguagem API: 
     Tecnologia: PHP
     Versão: 8.0.13
+
+    Framework: slim
+    Versão: 4.7
     
 ## Banco de dados:
     Tecnologia: MySQl
