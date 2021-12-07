@@ -1,9 +1,5 @@
 # API
 
-# PHP
-
-## Executar o projeto
-
 # MYSQL
 ## Terminal
 - Acessar o banco de dados pelo terminal
@@ -43,3 +39,22 @@
                 ON UPDATE RESTRICT ON DELETE CASCADE
         );
     ~~~~
+
+# PHP
+
+## Executar o projeto
+# Docker
+~~~~php
+cd api
+
+docker-compose up -d
+
+http://localhost:8080
+~~~~
+
+# Php instalado localmente
+~~~~php
+php -S localhost:8080 -t api/public api/public/index.php
+~~~~
+
+
