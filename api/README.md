@@ -1,62 +1,83 @@
 # API
 
 # MYSQL
+
 ## Terminal
+
 - Acessar o banco de dados pelo terminal
-    ~~~~sql
-        mysql -u root -p
-    ~~~~
-    
+  ```sql
+      mysql -u root -p
+  ```
+
 ## Script
 
--  Criar database 
-    ~~~~sql
-        CREATE DATABASE desafio_gerenciador_projetos;
-    ~~~~
+- Criar database
+
+  ```sql
+      CREATE DATABASE desafio_gerenciador_projetos;
+  ```
 
 - Tabela projetos
-    ~~~~sql
-        CREATE TABLE IF NOT EXISTS projetos
-        (
-            projetos_id INT(11) NOT NULL AUTO_INCREMENT PRIMARY KEY,
-            projetos_nome VARCHAR(255) NOT NULL,
-            projetos_data_inicio DATE,
-            projetos_data_fim DATE,
-            projetos_data_criacao TIMESTAMP DEFAULT CURRENT_TIMESTAMP
-        );
-    
+
+  ```sql
+      CREATE TABLE IF NOT EXISTS projetos
+      (
+          projetos_id INT(11) NOT NULL AUTO_INCREMENT PRIMARY KEY,
+          projetos_nome VARCHAR(255) NOT NULL,
+          projetos_data_inicio DATE,
+          projetos_data_fim DATE,
+          projetos_data_criacao TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+      );
+
+  ```
+
 - Tabela atividades
-    ~~~~sql
-        CREATE TABLE IF NOT EXISTS atividades
-        (
-            atividades_id INT(11) NOT NULL AUTO_INCREMENT PRIMARY KEY,
-            projetos_id INT(11) NOT NULL,
-            atividades_nome VARCHAR(255) NOT NULL,
-            atividades_data_inicio DATE,
-            atividades_data_fim DATE,
-            atividades_finalizada BOOLEAN NOT NULL DEFAULT FALSE,
-            atividades_data_criacao TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-            FOREIGN KEY (projetos_id)
-                REFERENCES projetos(projetos_id)
-                ON UPDATE RESTRICT ON DELETE CASCADE
-        );
-    ~~~~
+  ```sql
+      CREATE TABLE IF NOT EXISTS atividades
+      (
+          atividades_id INT(11) NOT NULL AUTO_INCREMENT PRIMARY KEY,
+          projetos_id INT(11) NOT NULL,
+          atividades_nome VARCHAR(255) NOT NULL,
+          atividades_data_inicio DATE,
+          atividades_data_fim DATE,
+          atividades_finalizada BOOLEAN NOT NULL DEFAULT FALSE,
+          atividades_data_criacao TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+          FOREIGN KEY (projetos_id)
+              REFERENCES projetos(projetos_id)
+              ON UPDATE RESTRICT ON DELETE CASCADE
+      );
+  ```
 
 # PHP
 
+# .env
+
+Para que a api seja conectada ao banco é preciso criar um arquivo chamado .env no caminho **api/app/.env**
+
+Adiciona o seguinte código:
+
+```php
+DRIVER="mysql"
+HOST="localhost:3306"
+USERNAME=""
+DATABASE="desafio_gerenciador_projetos"
+PASSWORD=""
+```
+
 ## Executar o projeto
+
 # Docker
-~~~~php
+
+```php
 cd api
 
 docker-compose up -d
 
 http://localhost:8080
-~~~~
+```
 
 # Php instalado localmente
-~~~~php
+
+```php
 php -S localhost:8080 -t api/public api/public/index.php
-~~~~
-
-
+```
