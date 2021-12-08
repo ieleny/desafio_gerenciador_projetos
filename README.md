@@ -14,6 +14,9 @@ O projeto está dividido em duas pastas principais, a api e o front-end.
 
     Framework: slim
     Versão: 4.7
+
+### Arquitetura
+    - Action domain responder
     
 ## Banco de dados:
     Tecnologia: MySQl
