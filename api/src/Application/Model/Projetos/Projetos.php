@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace App\Action\Input;
+namespace App\Application\Model\Projetos;
 
 use DateTime;
 
@@ -17,13 +17,11 @@ final class Projetos
     private DateTime $atividades_data_criacao;
 
     public function __construct(
-        int $projetos_id,
         string $atividades_nome,
         DateTime $atividades_data_inicio,
         DateTime $atividades_data_fim,
         bool $atividades_finalizada
     ) {
-        $this->projetos_id = $projetos_id;
         $this->atividades_nome = $atividades_nome;
         $this->atividades_data_inicio = $atividades_data_inicio;
         $this->atividades_data_fim = $atividades_data_fim;
