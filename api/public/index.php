@@ -1,4 +1,5 @@
 <?php
+
 declare(strict_types=1);
 
 use App\Application\Handlers\HttpErrorHandler;
@@ -46,8 +47,13 @@ $middleware($app);
 $routes = require __DIR__ . '/../app/routes.php';
 $routes($app);
 
+// Register database
+require __DIR__ . '/../app/database.php';
+
 /** @var SettingsInterface $settings */
 $settings = $container->get(SettingsInterface::class);
+
+$settings->get("db");
 
 $displayErrorDetails = $settings->get('displayErrorDetails');
 $logError = $settings->get('logError');
